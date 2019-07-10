@@ -28,21 +28,5 @@ RSpec.describe 'Order Creation' do
       fill_in 'State', with: state
       fill_in 'Zip', with: zip
     end
-
-    it "After I place an order, i can see my order information" do
-      visit new_order_path
-      click_button 'Create Order'
-      expect(current_path).to eq(order_path)
-      visit order_path
-
-      expect(page).to have_content("Shipping Information")
-      expect(page).to have_content("Logan Marma")
-      expect(page).to have_content("123 Tree St")
-      expect(page).to have_content("Denver")
-      expect(page).to have_content("CO")
-      # expect(page).to have_content("80237")
-      # expect(page).to have_content(80237)
-
-    end
   end
 end
