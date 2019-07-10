@@ -28,8 +28,9 @@ Rails.application.routes.draw do
   delete '/cart', to: 'carts#destroy', as: :empty_cart
 
   get '/orders/new', to: 'orders#new', as: :new_order
-  post '/orders', to: 'orders#create'
   get '/orders/:id', to: 'orders#show', as: :order
+  post '/orders', to: 'orders#create'
+
 
   get '/items/:item_id/reviews/new', to: 'reviews#new', as: :new_review
   post '/items/:item_id/reviews', to: 'reviews#create', as: :review

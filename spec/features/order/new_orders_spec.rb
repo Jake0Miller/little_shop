@@ -56,9 +56,9 @@ RSpec.describe 'New Order Creation' do
       expect(page).to have_content("Zip")
       expect(page).to have_button("Create Order")
 
-      # click_button 'Create Order'
-      # expect(current_path).to eq(order_path)
+      click_button 'Create Order'
 
+      expect(current_path).to eq(order_path)
       # the form button to create order, where is the path for that button to follow?
     end
   end

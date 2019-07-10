@@ -1,6 +1,7 @@
 <h2>New Order</h2>
-<%= form_tag orders_path do %>
-  <%= render 'cart' %>
-  <%= render 'fields' %>
-  <%= submit_tag 'Create Order' %>
-<% end %>
+<%= render 'cart' %>
+<%= render partial: 'fields', locals: {
+                          path: orders_path,
+                          method: :post,
+                          button_name: 'Create Order'
+                          } %>
