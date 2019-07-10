@@ -11,7 +11,7 @@ describe Order, type: :model do
 
   describe 'Relationships' do
     it { should have_many :order_items}
-    it { should have_many :items}.through(:order_items)}
+    it { should have_many(:items).through(:order_items)}
   end
 
   describe 'Methods' do

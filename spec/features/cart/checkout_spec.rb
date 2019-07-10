@@ -11,7 +11,7 @@ RSpec.describe 'Cart Checkout link' do
       @hippo = @brian.items.create!(name: 'Hippo', description: "I'm a Hippo!", price: 50, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLM_vbg2Rh-mZ-B4t-RSU9AmSfEEq_SN9xPP_qrA2I6Ftq_D9Qw', active: true, inventory: 3 )
     end
 
-    it 'I can remove one item from the cart' do
+    it 'I can checkout from the cart' do
       visit item_path(@ogre)
       click_link "Add to Cart"
       visit item_path(@ogre)
@@ -22,7 +22,7 @@ RSpec.describe 'Cart Checkout link' do
       visit cart_path
 
       expect(page).to have_link("Checkout")
-
+      
       click_link("Checkout")
 
       expect(current_path).to eq(new_order_path)

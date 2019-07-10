@@ -16,6 +16,7 @@
     <p>Quantity: <%= qty %></p>
     <p>Subtotal: <%= number_to_currency(sub_tot) %></p>
   </section>
+<% end %>
 
   <p>Total: <%= number_to_currency(running_total) %></p>
   <p>Date Created: <%= @order.created_at.to_s.split[0] %></p>

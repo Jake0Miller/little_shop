@@ -21,7 +21,7 @@ RSpec.describe 'Delete Item' do
         expect(page).to have_content('Title: Amazing!')
         expect(page).to have_content('Rating: 5')
         expect(page).to have_content('The best Giant I ever saw')
-
+        
         expect(Review.find(@review_1.id)).to eq(@review_1)
 
         expect {@review_1.destroy}.to change(Review, :count).by(-1)
