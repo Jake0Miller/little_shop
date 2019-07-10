@@ -27,11 +27,9 @@ Rails.application.routes.draw do
   patch '/cart/:item_id/minus', to: 'carts#decr_qty', as: :decr_qty
   delete '/cart', to: 'carts#destroy', as: :empty_cart
 
-  post '/orders', to: 'orders#create'
-  get '/orders/:id', to: 'orders#show', as: :order
   get '/orders/new', to: 'orders#new', as: :new_order
-  get '/orders/:id', to: 'orders#show', as: :order
   post '/orders', to: 'orders#create'
+  get '/orders/:id', to: 'orders#show', as: :order
 
   get '/items/:item_id/reviews/new', to: 'reviews#new', as: :new_review
   post '/items/:item_id/reviews', to: 'reviews#create', as: :review
